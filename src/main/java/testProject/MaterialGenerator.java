@@ -9,11 +9,12 @@ public class MaterialGenerator {
 
 	public static List<Material> materialList = new ArrayList<Material>();
 
-	public void initialiseMaterialList() {
+	public List<Material> initialiseMaterialList() {
 		Material m1 = createMaterial(0, "first material");
 		Material m2 = createMaterial(1, "second material");
 		addMaterial(m1);
 		addMaterial(m2);
+		return materialList;
 	}
 
 	public Material createMaterial(long id, String name) {

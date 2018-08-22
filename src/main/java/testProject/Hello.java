@@ -4,15 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Material;
+import service.IMaterialService;
+import service.MaterialServiceImpl;
 
 public class Hello {
 
 	public static void main(String[] args) {
-		System.out.println("Hello GIT in Eclipse helps? I going to retry\n");
+		System.out.println("Hello GIT in Eclipse helps? I am going to retry\n");
 
+		IMaterialService ms = new MaterialServiceImpl();
+
+		// some Materials
 		MaterialGenerator mg = new MaterialGenerator();
-		Material m1 = mg.createMaterial(0, "first material");
-		Material m2 = mg.createMaterial(1, "second material");
 		Material m3 = mg.createMaterial(2, "third material");
 		Material m4 = mg.createMaterial(3, "fourth material");
 		Material m5 = mg.createMaterial(4, "fifth material");
@@ -21,12 +24,15 @@ public class Hello {
 		materialList.add(m4);
 		materialList.add(m5);
 
-		// mg.initialiseMaterialList();
+		// initialse with
+		// Material m1 = mg.createMaterial(0, "first material");
+		// Material m2 = mg.createMaterial(1, "second material");
+		ms.initialiseMaterialList();
 
-		List<Material> materialList1 = mg.addMaterial(m3);
+		List<Material> materialList1 = ms.addMaterial(m3);
 		printMaterials(materialList1);
 
-		List<Material> materialList2 = mg.addMaterials(materialList);
+		List<Material> materialList2 = ms.addMaterials(materialList);
 		printMaterials(materialList2);
 
 	}
