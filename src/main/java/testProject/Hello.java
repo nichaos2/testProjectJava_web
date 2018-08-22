@@ -20,21 +20,34 @@ public class Hello {
 		Material m4 = mg.createMaterial(3, "fourth material");
 		Material m5 = mg.createMaterial(4, "fifth material");
 
-		List<Material> materialList = new ArrayList<Material>();
-		materialList.add(m4);
-		materialList.add(m5);
+		List<Material> materialListTest = new ArrayList<Material>();
+		materialListTest.add(m4);
+		materialListTest.add(m5);
 
-		// initialse with
+		// initialse with:
 		// Material m1 = mg.createMaterial(0, "first material");
 		// Material m2 = mg.createMaterial(1, "second material");
 		ms.initialiseMaterialList();
 
-		List<Material> materialList1 = ms.addMaterial(m3);
-		printMaterials(materialList1);
+		List<Material> mList = ms.addMaterial(m3);
 
-		List<Material> materialList2 = ms.addMaterials(materialList);
-		printMaterials(materialList2);
+		mList = ms.addMaterials(materialListTest);
 
+		ms.deleteMaterial(3);
+
+		System.out.println(ms.getMaterialById(2));
+
+		mList = ms.getAllMaterials();
+
+		printMaterials(mList);
+
+		// choose a specific material with id
+		for (Material m : mList) {
+			if (m.getId() == 1)
+				mList = ms.updateMaterial(m, "update1 material");
+		}
+
+		printMaterials(mList);
 	}
 
 	private static void printMaterials(List<Material> materialList) {

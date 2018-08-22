@@ -1,3 +1,10 @@
+/*
+ * This service is connected to a list generator
+ * When Dao is up and running the treatment should be replaced accordingly
+ *  
+ *  
+ */
+
 package service;
 
 import java.util.List;
@@ -26,6 +33,22 @@ public class MaterialServiceImpl implements IMaterialService {
 
 	public List<Material> addMaterials(List<Material> mListIn) {
 		materialList = mg.addMaterials(mListIn);
+		return materialList;
+	}
+
+	public Material getMaterialById(long id) {
+		Material m = mg.getMaterialById(id);
+		return m;
+	}
+
+	public void deleteMaterial(int id) {
+		mg.deleteMaterial(id);
+
+	}
+
+	// TODO this needs more addressing
+	public List<Material> updateMaterial(Material m, String name) {
+		materialList = mg.updateMaterial(m, name);
 		return materialList;
 	}
 

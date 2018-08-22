@@ -1,6 +1,7 @@
 package testProject;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import model.Material;
@@ -37,5 +38,30 @@ public class MaterialGenerator {
 		}
 		return materialList;
 
+	}
+
+	public void deleteMaterial(int id) {
+		// TODO Auto-generated method stub
+		for (Iterator<Material> iter = materialList.listIterator(); iter.hasNext();) {
+			Material m = iter.next();
+			if (m.getId() == id)
+				iter.remove();
+		}
+
+	}
+
+	public Material getMaterialById(long id) {
+		Material mId = new Material();
+		for (Iterator<Material> iter = materialList.listIterator(); iter.hasNext();) {
+			Material m = iter.next();
+			if (m.getId() == id)
+				mId = m;
+		}
+		return mId;
+	}
+
+	public List<Material> updateMaterial(Material m, String name) {
+		m.setName(name);
+		return materialList;
 	}
 }

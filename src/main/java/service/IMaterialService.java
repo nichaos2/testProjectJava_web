@@ -13,4 +13,11 @@ public interface IMaterialService {
 	public List<Material> addMaterial(Material m);
 
 	public List<Material> addMaterials(List<Material> materialList);
+
+	public Material getMaterialById(long id);
+
+	public void deleteMaterial(int id);
+
+	public List<Material> updateMaterial(Material m, String name);
+
 }
