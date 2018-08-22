@@ -9,9 +9,12 @@ package service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import model.Material;
 import testProject.MaterialGenerator;
 
+@Service
 public class MaterialServiceImpl implements IMaterialService {
 
 	// Generator instead of database
