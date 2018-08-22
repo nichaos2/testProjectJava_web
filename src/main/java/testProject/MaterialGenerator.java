@@ -1,8 +1,11 @@
 package testProject;
 
+import java.util.List;
+
 import model.Material;
 
 public class MaterialGenerator {
+
 	public Material createMaterial(long id, String name) {
 		Material m = new Material();
 		m.setId(id);
