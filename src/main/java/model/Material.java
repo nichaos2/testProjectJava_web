@@ -6,6 +6,8 @@ public class Material {
 
 	String name;
 
+	String newThing;
+
 	float energy_consum;
 	int rank_energy_consum;
 
@@ -105,6 +107,14 @@ public class Material {
 
 	public void setAvg_impact_x_bfratio(float avg_impact_x_bfratio) {
 		this.avg_impact_x_bfratio = avg_impact_x_bfratio;
+	}
+
+	public String getNewThing() {
+		return newThing;
+	}
+
+	public void setNewThing(String newThing) {
+		this.newThing = newThing;
 	}
 
 	@Override
